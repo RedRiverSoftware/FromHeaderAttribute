@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using FromHeaderAttribute.Sample.Models;
 using System.Web.Http;
-using FromHeaderAttribute.Sample.Models;
 
 namespace FromHeaderAttribute.Sample.Controllers
 {
@@ -34,6 +29,12 @@ namespace FromHeaderAttribute.Sample.Controllers
             {
                 secretPenguinMessage = "Wenk!"
             });
+        }
+
+        [Route("")]
+        public string PostEcho([RedRiver.FromHeaderAttribute.FromHeader]string test)
+        {
+            return test;
         }
     }
 }
